@@ -4,10 +4,14 @@ Load tests for [Firefox Send](https://github.com/mozilla/send).
 
 ## Uploading files:
 
-The following example will upload a local file named "./package.json" with a custom `X-File-Metadata` HTTP header. Note that the nested `id` attribute must be a [24-character hex string](https://github.com/mozilla/send/blob/52173bf6e79c35fbba7e3493fae94ebf9d53b4c0/server/server.js#L240-L242):
+The following example will upload a local file named "./package.json" with a custom `X-File-Metadata` HTTP header using [HTTPie](https://httpie.org/).
+
+**NOTE:** The nested `id` attribute must be a [24-character hex string](https://github.com/mozilla/send/blob/52173bf6e79c35fbba7e3493fae94ebf9d53b4c0/server/server.js#L240-L242):
 
 ```sh
-$ http -f POST https://send.stage.mozaws.net/upload 'X-File-Metadata:{"aad":"ff00", "id":"123456789012345678901234", "filename":"foo.txt"}' file@./package.json
+$ http -f POST https://send.stage.mozaws.net/upload \
+    'X-File-Metadata:{"aad":"ff00", "id":"123456789012345678901234", "filename":"foo.txt"}' \
+    file@./package.json
 ```
 
 ### Output:
