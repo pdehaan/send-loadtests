@@ -1,0 +1,29 @@
+{
+  "ecs_name": "send-loadtests-pdehaan",
+  "name": "Loadtest",
+  "description": "send-loadtest",
+  "metrics_options": {
+    "enabled": true,
+    "dashboard": {
+      "admin_user": "admin",
+      "admin_password": "testing",
+      "name": "molotov-screenshots",
+      "filename": "gf_basic_dashboard.json"
+    }
+  },
+  "steps": [
+    {
+      "name": "UPLOAD",
+      "cmd": "molotov -c -p 1 -d 300 -w 10 loadtest.py",
+      "instance_count": 1,
+      "instance_type": "m3.medium",
+      "run_max_time": 300,
+      "container_name": "firefoxtesteng/send-loadtests:latest",
+      "env": {
+        "URL_SERVER": "https://send.stage.mozaws.net",
+        "TEST_MODULE": "loadtest.py"
+      },
+      "docker_series": "send_tests"
+    }
+  ]
+}
