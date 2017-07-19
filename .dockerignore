@@ -5,3 +5,6 @@ __pycache__
 .cache
 .tox
 venv*
+Dockerfile
+LICENSE
+README.md
