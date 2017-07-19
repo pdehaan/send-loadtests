@@ -1,7 +1,8 @@
 import json
+import os
 import requests
 
-url = 'https://send.stage.mozaws.net/upload'
+url = os.environ['URL_SERVER'] + '/upload'
 
 def upload_file(url, filename, aad='ff00', id='123456789012345678901234'):
     with open(filename, 'rb') as file:
