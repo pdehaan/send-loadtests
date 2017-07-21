@@ -4,6 +4,7 @@ import requests
 
 url = os.environ['URL_SERVER'] + '/upload'
 
+
 def upload_file(url, filename, aad='ff00', id='123456789012345678901234'):
     with open(filename, 'rb') as file:
         # Build JSON payload for X-File-Metadata header.
@@ -26,5 +27,6 @@ def upload_file(url, filename, aad='ff00', id='123456789012345678901234'):
         else:
             print(res.text)
             pass
+
 
 upload_file(url, 'molotov.env')
