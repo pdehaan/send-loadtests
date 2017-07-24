@@ -1,7 +1,6 @@
 import molotov
 import json
 import os
-import requests
 
 
 url = os.environ['URL_SERVER'] + '/upload'
