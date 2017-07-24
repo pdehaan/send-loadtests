@@ -29,4 +29,4 @@ def upload_file(url, filename, aad='ff00', id='123456789012345678901234'):
             pass
 
 
-upload_file(url, 'molotov.env')
+upload_file(url, 'loadtest.py')

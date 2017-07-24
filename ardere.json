@@ -18,8 +18,47 @@
         "URL_SERVER": "https://send.stage.mozaws.net"
       },
       "cmd": "tox -e docker",
-      "instance_count": 1,
+      "instance_count": 20,
       "instance_type": "m3.medium",
+      "run_max_time": 300,
+      "container_name": "firefoxtesteng/send-loadtests:latest",
+      "docker_series": "send_tests"
+    },
+    {
+      "name": "step2",
+      "env": {
+        "URL_SERVER": "https://send.stage.mozaws.net"
+      },
+      "cmd": "tox -e docker",
+      "instance_count": 40,
+      "instance_type": "m3.medium",
+      "run_delay": 400,
+      "run_max_time": 300,
+      "container_name": "firefoxtesteng/send-loadtests:latest",
+      "docker_series": "send_tests"
+    },
+    {
+      "name": "step3",
+      "env": {
+        "URL_SERVER": "https://send.stage.mozaws.net"
+      },
+      "cmd": "tox -e docker",
+      "instance_count": 60,
+      "instance_type": "m3.medium",
+      "run_delay": 800,
+      "run_max_time": 300,
+      "container_name": "firefoxtesteng/send-loadtests:latest",
+      "docker_series": "send_tests"
+    },
+    {
+      "name": "step4",
+      "env": {
+        "URL_SERVER": "https://send.stage.mozaws.net"
+      },
+      "cmd": "tox -e docker",
+      "instance_count": 80,
+      "instance_type": "m3.medium",
+      "run_delay": 1200,
       "run_max_time": 300,
       "container_name": "firefoxtesteng/send-loadtests:latest",
       "docker_series": "send_tests"
